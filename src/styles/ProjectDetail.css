@@ -1,0 +1,226 @@
+/* ProjectDetail.css */
+
+.project-detail-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #3b82f6;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s;
+}
+
+.back-button:hover {
+    color: #2563eb;
+}
+
+.project-detail-container h1 {
+    font-size: 2.5rem;
+    color: #111827;
+    margin-bottom: 1rem;
+}
+
+.description {
+    font-size: 1.125rem;
+    color: #6b7280;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.section {
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: #f9fafb;
+    border-radius: 0.5rem;
+    border: 1px solid #e5e7eb;
+}
+
+.section h2 {
+    font-size: 1.875rem;
+    color: #111827;
+    margin-bottom: 1.5rem;
+}
+
+.section h3 {
+    font-size: 1.25rem;
+    color: #374151;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+}
+
+.section p {
+    color: #4b5563;
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+}
+
+.section ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+    color: #4b5563;
+}
+
+.section li {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Competitor Cards */
+.competitor-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+}
+
+.competitor-card h3 {
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+}
+
+.market-validation,
+.differentiation {
+    background: #eff6ff;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    margin-top: 1rem;
+    border-left: 4px solid #3b82f6;
+}
+
+/* RICE Table */
+.rice-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.rice-table thead {
+    background: #f3f4f6;
+}
+
+.rice-table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.rice-table td {
+    padding: 0.75rem 1rem;
+    border-top: 1px solid #e5e7eb;
+    color: #4b5563;
+}
+
+.rice-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+.rice-table tr.p0 {
+    background: #fee2e2;
+}
+
+.rice-table tr.p1 {
+    background: #fed7aa;
+}
+
+.rice-table tr.p2 {
+    background: #fef3c7;
+}
+
+/* Roadmap Phases */
+.roadmap-phase {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+    position: relative;
+    padding-left: 3rem;
+}
+
+.roadmap-phase::before {
+    content: '';
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: #3b82f6;
+    border-radius: 50%;
+}
+
+.roadmap-phase h3 {
+    margin-top: 0;
+    color: #1f2937;
+}
+
+/* Architecture Image */
+.architecture-img {
+    width: 100%;
+    max-width: 800px;
+    margin: 2rem auto;
+    display: block;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Integration Cards */
+.integration-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+}
+
+.integration-card h3 {
+    color: #1f2937;
+    margin-bottom: 0.75rem;
+    margin-top: 0;
+}
+
+/* Go/No-Go Framework */
+.section ul {
+    margin: 0;
+}
+
+.section h3:first-of-type {
+    margin-top: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-detail-container {
+        padding: 1rem;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    .rice-table {
+        font-size: 0.875rem;
+    }
+
+    .rice-table th,
+    .rice-table td {
+        padding: 0.5rem;
+    }
+}
