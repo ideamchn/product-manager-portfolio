@@ -804,7 +804,7 @@ const projects = [
         },
         "timeline": "90 Days",
         "team": "5",
-        "summary": "Building the \"Stripe for Enterprise Training\" - the first mobile-native Digital Adoption Platform (DAP) designed specifically for Indian enterprises, making software training 10x faster and 80% cheaper.",
+        "summary": "Building the first mobile-native Digital Adoption Platform (DAP) designed specifically for Indian enterprises, making software training 10x faster and 80% cheaper.",
         "originStory": "Started with a simple question - \"Beta, where can I find my UPI ID in PhonePe?\" This revealed a universal truth: if educated Indians struggle with simple apps, imagine 10 million employees battling complex enterprise software daily. The real crisis? 80% of Indian workforce is mobile-first, but all enterprise training is desktop-first.",
         "burnRate": {
             "monthly": "₹8,50,000",
