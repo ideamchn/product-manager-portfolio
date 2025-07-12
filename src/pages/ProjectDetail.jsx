@@ -1,19 +1,32 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import projects from '../data/projectsData'
+import projects from '../data/projectsData.js'
 import MetricsTable from '../components/MetricsTable'
 import RoadmapTimeline from '../components/RoadmapTimeline'
 import CodeBlock from '../components/CodeBlock'
 
 const ProjectDetail = () => {
     const { id } = useParams()
-    const project = projects.find(p => p.id === id)
+
+    // Debug logging
+    console.log('Projects data:', projects)
+    console.log('Looking for project ID:', id)
+    console.log('Projects is array?', Array.isArray(projects))
+
+    // Find project with error handling
+    const project = projects.find(p => p && p.id === id)
 
     if (!project) {
         return (
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 <div className="text-center">
                     <h1 className="text-2xl font-bold text-gray-900 mb-4">Project Not Found</h1>
+                    <p className="text-gray-600 mb-4">
+                        Looking for "{id}" in {projects.length} projects
+                    </p>
+                    <div className="text-sm text-gray-500 mb-4">
+                        Available projects: {projects.map(p => p.id).join(', ')}
+                    </div>
                     <Link to="/" className="text-blue-600 hover:text-blue-800">
                         ← Back to Projects
                     </Link>
@@ -42,12 +55,30 @@ const ProjectDetail = () => {
                     <span className={`px-3 py-1 text-sm font-medium rounded-full ${
                         project.status === 'MVP Development'
                             ? 'bg-blue-100 text-blue-800'
-                            : 'bg-green-100 text-green-800'
+                            : project.status === 'Launched'
+                                ? 'bg-green-100 text-green-800'
+                                : 'bg-gray-100 text-gray-800'
                     }`}>
             {project.status}
           </span>
                 </div>
 
+                {/* Domain and Market Info */}
+                {project.domain && (
+                    <div className="mb-4">
+                        <span className="text-sm font-medium text-gray-500 mr-4">Domain:</span>
+                        <span className="text-sm text-gray-700">{project.domain}</span>
+                    </div>
+                )}
+
+                {project.market && (
+                    <div className="mb-6">
+                        <span className="text-sm font-medium text-gray-500 mr-4">Market Size:</span>
+                        <span className="text-sm font-semibold text-green-600">{project.market}</span>
+                    </div>
+                )}
+
+                {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-6">
                     {project.technologies.map((tech, index) => (
                         <span
@@ -60,98 +91,112 @@ const ProjectDetail = () => {
                 </div>
             </div>
 
+            {/* Origin Story - Special styling for compelling narrative */}
+            {project.originStory && (
+                <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8 mb-8 border-l-4 border-blue-500">
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">The Origin Story</h2>
+                    <p className="text-lg text-gray-700 italic leading-relaxed">{project.originStory}</p>
+                </div>
+            )}
+
             {/* Executive Summary */}
-            <div className="bg-blue-50 rounded-lg p-6 mb-8">
+            <div className="bg-white rounded-lg shadow-md p-8 mb-8">
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Executive Summary</h2>
-                <p className="text-gray-700 mb-4">{project.summary}</p>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="text-center p-4 bg-white rounded">
-                        <div className="text-2xl font-bold text-blue-600">{project.metrics.value}</div>
-                        <div className="text-sm text-gray-500">{project.metrics.label}</div>
+                <p className="text-gray-700 mb-6 text-lg leading-relaxed">{project.summary}</p>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+                        <div className="text-3xl font-bold text-blue-600 mb-2">{project.metrics.value}</div>
+                        <div className="text-sm text-gray-600">{project.metrics.label}</div>
                     </div>
-                    <div className="text-center p-4 bg-white rounded">
-                        <div className="text-2xl font-bold text-green-600">{project.timeline}</div>
-                        <div className="text-sm text-gray-500">Timeline</div>
+                    <div className="text-center p-6 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+                        <div className="text-3xl font-bold text-green-600 mb-2">{project.timeline}</div>
+                        <div className="text-sm text-gray-600">Timeline</div>
                     </div>
-                    <div className="text-center p-4 bg-white rounded">
-                        <div className="text-2xl font-bold text-purple-600">{project.team}</div>
-                        <div className="text-sm text-gray-500">Team Size</div>
+                    <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
+                        <div className="text-3xl font-bold text-purple-600 mb-2">{project.team}</div>
+                        <div className="text-sm text-gray-600">Team Size</div>
                     </div>
                 </div>
             </div>
 
-            {/* Origin Story (if exists) */}
-            {project.originStory && (
-                <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6 mb-8">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-3">The Origin Story</h2>
-                    <p className="text-gray-700 italic">{project.originStory}</p>
-                </div>
-            )}
-
-            {/* Current Traction (if exists) */}
-            {project.currentTraction && (
-                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-4">Current Traction</h2>
-                    <div className="grid md:grid-cols-2 gap-4">
-                        {Object.entries(project.currentTraction).map(([key, value]) => (
-                            <div key={key} className="flex items-start">
-                                <svg className="w-5 h-5 text-green-500 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                                </svg>
-                                <span className="text-gray-700">{value}</span>
-                            </div>
-                        ))}
+            {/* Burn Rate Analysis - Show financial metrics prominently */}
+            {project.burnRate && (
+                <div className="bg-yellow-50 rounded-lg shadow-md p-8 mb-8">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-6">Financial Overview</h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div className="bg-white rounded-lg p-6">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">Current Burn Rate</h3>
+                            <div className="text-2xl font-bold text-red-600 mb-1">{project.burnRate.monthly}</div>
+                            <div className="text-sm text-gray-500">{project.burnRate.monthlyUSD}</div>
+                        </div>
+                        <div className="bg-white rounded-lg p-6">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">18-Month Runway</h3>
+                            <div className="text-2xl font-bold text-green-600 mb-1">{project.burnRate.runway18Month}</div>
+                            <div className="text-sm text-gray-500">{project.burnRate.runway18MonthUSD}</div>
+                        </div>
                     </div>
-                </div>
-            )}
 
-            {/* Success Metrics (if exists) */}
-            {project.successMetrics && (
-                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-6">Success Metrics</h2>
-                    <div className="grid md:grid-cols-3 gap-6">
-                        {Object.entries(project.successMetrics).map(([category, metrics]) => (
-                            <div key={category}>
-                                <h3 className="text-lg font-medium text-gray-800 mb-3 capitalize">{category}</h3>
-                                <div className="space-y-2">
-                                    {metrics.map((metric, idx) => (
-                                        <div key={idx} className="flex justify-between text-sm">
-                                            <span className="text-gray-600">{metric.metric}</span>
-                                            <span className="font-medium text-gray-900">{metric.target}</span>
+                    {/* Revenue Targets */}
+                    {project.revenueTargets && (
+                        <div className="mt-6">
+                            <h3 className="text-lg font-semibold text-gray-800 mb-4">Revenue Milestones</h3>
+                            <div className="space-y-3">
+                                {project.revenueTargets.map((target, index) => (
+                                    <div key={index} className="flex items-center p-3 bg-white rounded-lg">
+                                        <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                                            <span className="text-blue-600 font-semibold">M{target.month}</span>
                                         </div>
-                                    ))}
-                                </div>
+                                        <div>
+                                            <div className="font-medium text-gray-900">{target.description}</div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
-                    </div>
+                        </div>
+                    )}
                 </div>
             )}
 
-            {/* Financial Projections (if exists) */}
+            {/* Financial Projections Table */}
             {project.financialProjections && (
-                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
-                    <h2 className="text-xl font-semibold text-gray-900 mb-6">Financial Projections</h2>
+                <div className="bg-white rounded-lg shadow-md p-8 mb-8">
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-6">5-Year Financial Projections</h2>
                     <div className="overflow-x-auto">
-                        <table className="min-w-full">
-                            <thead>
-                            <tr className="border-b">
-                                <th className="text-left py-2 px-4">Period</th>
-                                {Object.keys(project.financialProjections[0])
-                                    .filter(key => key !== 'year')
-                                    .map(key => (
-                                        <th key={key} className="text-center py-2 px-4 capitalize">{key}</th>
-                                    ))}
+                        <table className="min-w-full border border-gray-200 rounded-lg">
+                            <thead className="bg-gray-50">
+                            <tr>
+                                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Year</th>
+                                <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                                    {project.id === 'kg-nft-api' ? 'Developers' : 'Customers'}
+                                </th>
+                                <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                                    {project.id === 'kg-nft-api' ? 'Revenue' : 'ARPU'}
+                                </th>
+                                <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                                    {project.id === 'kg-nft-api' ? 'Transactions' : 'Revenue'}
+                                </th>
+                                <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">
+                                    {project.id === 'kg-nft-api' ? 'Burn/Profit' : 'Growth'}
+                                </th>
                             </tr>
                             </thead>
-                            <tbody>
-                            {project.financialProjections.map((projection, idx) => (
-                                <tr key={idx} className="border-b hover:bg-gray-50">
-                                    <td className="py-2 px-4 font-medium">{projection.year}</td>
-                                    {Object.entries(projection)
-                                        .filter(([key]) => key !== 'year')
-                                        .map(([key, value]) => (
-                                            <td key={key} className="text-center py-2 px-4">{value}</td>
-                                        ))}
+                            <tbody className="bg-white divide-y divide-gray-200">
+                            {project.financialProjections.map((projection, index) => (
+                                <tr key={index} className={index === 0 ? "bg-blue-50" : "hover:bg-gray-50"}>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{projection.year}</td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                                        {projection.customers || projection.developers}
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">
+                                        {projection.arpu || projection.revenue}
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900 text-center">
+                                        {projection.revenue || projection.transactions}
+                                    </td>
+                                    <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium text-center">
+                                        {projection.growth || projection.burn}
+                                    </td>
                                 </tr>
                             ))}
                             </tbody>
@@ -160,7 +205,7 @@ const ProjectDetail = () => {
                 </div>
             )}
 
-            {/* Investment Ask (if exists) */}
+            {/* Investment Ask */}
             {project.investmentAsk && (
                 <div className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg shadow-md p-8 mb-8">
                     <h2 className="text-2xl font-bold text-gray-900 mb-6">Investment Opportunity</h2>
@@ -168,59 +213,53 @@ const ProjectDetail = () => {
                     <div className="bg-white rounded-lg p-6 mb-6">
                         <h3 className="text-3xl font-bold text-indigo-600 mb-2">{project.investmentAsk.amount}</h3>
                         <p className="text-lg text-gray-700 mb-2">{project.investmentAsk.valuation}</p>
-                        <p className="text-gray-600">{project.investmentAsk.timeline}</p>
-                        <p className="text-lg font-medium text-purple-600 mt-4">{project.investmentAsk.vision}</p>
+                        <p className="text-gray-600 mb-4">{project.investmentAsk.timeline}</p>
+                        <p className="text-lg font-medium text-purple-600">{project.investmentAsk.vision}</p>
                     </div>
 
                     <div className="grid md:grid-cols-2 gap-6">
-                        {project.investmentAsk.useOfFunds && (
-                            <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-4">Use of Funds</h3>
-                                <div className="space-y-3">
-                                    {project.investmentAsk.useOfFunds.map((fund, index) => (
-                                        <div key={index} className="bg-white rounded-lg p-4">
-                                            <div className="flex justify-between items-center mb-2">
-                                                <span className="font-medium text-gray-900">{fund.category}</span>
-                                                <span className="text-indigo-600 font-semibold">{fund.amount} ({fund.percentage})</span>
-                                            </div>
-                                            <p className="text-sm text-gray-600">{fund.description}</p>
+                        <div>
+                            <h3 className="text-lg font-semibold text-gray-900 mb-4">Use of Funds</h3>
+                            <div className="space-y-3">
+                                {project.investmentAsk.useOfFunds.map((fund, index) => (
+                                    <div key={index} className="bg-white rounded-lg p-4">
+                                        <div className="flex justify-between items-center mb-2">
+                                            <span className="font-medium text-gray-900">{fund.category}</span>
+                                            <span className="text-indigo-600 font-semibold">{fund.amount} ({fund.percentage})</span>
                                         </div>
-                                    ))}
-                                </div>
+                                        <p className="text-sm text-gray-600">{fund.description}</p>
+                                    </div>
+                                ))}
                             </div>
-                        )}
+                        </div>
 
-                        {project.investmentAsk.returns && (
-                            <div>
-                                <h3 className="text-lg font-semibold text-gray-900 mb-4">Expected Returns</h3>
-                                <div className="space-y-3">
-                                    {project.investmentAsk.returns.map((returnScenario, index) => (
-                                        <div key={index} className={`rounded-lg p-4 ${
-                                            index === 1 ? 'bg-green-100 border-2 border-green-500' : 'bg-white'
-                                        }`}>
-                                            <div className="font-medium text-gray-900 mb-1">{returnScenario.scenario}</div>
-                                            <div className="flex justify-between text-sm">
-                                                <span className="text-gray-600">Valuation: {returnScenario.valuation}</span>
-                                                <span className="font-semibold text-green-600">{returnScenario.multiple} return</span>
-                                            </div>
+                        <div>
+                            <h3 className="text-lg font-semibold text-gray-900 mb-4">Expected Returns</h3>
+                            <div className="space-y-3">
+                                {project.investmentAsk.returns.map((returnScenario, index) => (
+                                    <div key={index} className={`rounded-lg p-4 ${
+                                        index === 1 ? 'bg-green-100 border-2 border-green-500' : 'bg-white'
+                                    }`}>
+                                        <div className="font-medium text-gray-900 mb-1">{returnScenario.scenario}</div>
+                                        <div className="flex justify-between text-sm">
+                                            <span className="text-gray-600">Valuation: {returnScenario.valuation}</span>
+                                            <span className="font-semibold text-green-600">{returnScenario.multiple} return</span>
                                         </div>
-                                    ))}
-                                </div>
+                                    </div>
+                                ))}
                             </div>
-                        )}
+                        </div>
                     </div>
                 </div>
             )}
 
-            {/* Main Content */}
-            <div className="prose max-w-none">
-                {/* Render each section */}
-                {project.sections.map((section, index) => (
-                    <div key={index} className="mb-12">
+            {/* Main Sections */}
+            <div className="space-y-8">
+                {project.sections && project.sections.map((section, index) => (
+                    <div key={index} className="bg-white rounded-lg shadow-md p-8">
                         <h2 className="text-2xl font-semibold text-gray-900 mb-6">{section.title}</h2>
 
-                        {/* Render section content based on type */}
-                        {section.content.map((item, itemIndex) => {
+                        {section.content && section.content.map((item, itemIndex) => {
                             if (item.type === 'text') {
                                 return (
                                     <div key={itemIndex} className="mb-4">
@@ -230,28 +269,76 @@ const ProjectDetail = () => {
                             }
 
                             if (item.type === 'subsection') {
+                                // Special styling for Go/No-Go Decision sections
+                                const isGoNoGo = section.title.includes('Go/No-Go') || section.title.includes('Decision Framework')
+                                const getGoNoGoColor = (title) => {
+                                    if (title.includes('Green')) return 'from-green-50 to-green-100 border-green-200'
+                                    if (title.includes('Yellow')) return 'from-yellow-50 to-yellow-100 border-yellow-200'
+                                    if (title.includes('Red')) return 'from-red-50 to-red-100 border-red-200'
+                                    return 'from-gray-50 to-gray-100 border-gray-200'
+                                }
+
+                                // Special styling for Partnership Strategy sections
+                                const isPartnership = section.title.includes('Partnership Strategy')
+                                const getPartnershipColor = (title) => {
+                                    if (title.includes('Immediate')) return 'from-blue-50 to-blue-100 border-blue-200'
+                                    if (title.includes('Technology')) return 'from-purple-50 to-purple-100 border-purple-200'
+                                    if (title.includes('Industry')) return 'from-green-50 to-green-100 border-green-200'
+                                    if (title.includes('Global')) return 'from-indigo-50 to-indigo-100 border-indigo-200'
+                                    return 'from-gray-50 to-gray-100 border-gray-200'
+                                }
+
                                 return (
                                     <div key={itemIndex} className="mb-6">
-                                        <h3 className="text-xl font-medium text-gray-800 mb-3">{item.title}</h3>
-                                        {item.content.map((subItem, subIndex) => (
-                                            <div key={subIndex} className="mb-3">
-                                                {subItem.type === 'text' && (
-                                                    <p className="text-gray-700">{subItem.content}</p>
+                                        <div className={`p-6 rounded-lg border-2 ${
+                                            isGoNoGo ? `bg-gradient-to-r ${getGoNoGoColor(item.title)}` :
+                                                isPartnership ? `bg-gradient-to-r ${getPartnershipColor(item.title)}` :
+                                                    'bg-gray-50 border-gray-200'
+                                        }`}>
+                                            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+                                                {isGoNoGo && item.title.includes('Green') && (
+                                                    <span className="text-green-600 text-2xl mr-3">✅</span>
                                                 )}
-                                                {subItem.type === 'list' && (
-                                                    <ul className="list-disc pl-6 text-gray-700">
-                                                        {subItem.items.map((listItem, listIndex) => (
-                                                            <li key={listIndex} className="mb-1">{listItem}</li>
-                                                        ))}
-                                                    </ul>
+                                                {isGoNoGo && item.title.includes('Yellow') && (
+                                                    <span className="text-yellow-600 text-2xl mr-3">⚠️</span>
                                                 )}
-                                                {subItem.type === 'bullet' && (
-                                                    <div className="ml-4 mb-2">
-                                                        <strong className="text-gray-800">{subItem.title}:</strong> {subItem.content}
-                                                    </div>
+                                                {isGoNoGo && item.title.includes('Red') && (
+                                                    <span className="text-red-600 text-2xl mr-3">🛑</span>
                                                 )}
-                                            </div>
-                                        ))}
+                                                {isPartnership && (
+                                                    <span className="text-blue-600 text-2xl mr-3">🤝</span>
+                                                )}
+                                                {item.title}
+                                            </h3>
+                                            {item.content && item.content.map((subItem, subIndex) => (
+                                                <div key={subIndex} className="mb-3">
+                                                    {subItem.type === 'text' && (
+                                                        <p className="text-gray-700 leading-relaxed font-medium">{subItem.content}</p>
+                                                    )}
+                                                    {subItem.type === 'list' && subItem.items && (
+                                                        <ul className="space-y-3">
+                                                            {subItem.items.map((listItem, listIndex) => (
+                                                                <li key={listIndex} className="flex items-start">
+                                  <span className={`inline-block w-2 h-2 rounded-full mt-2 mr-3 flex-shrink-0 ${
+                                      isGoNoGo && item.title.includes('Green') ? 'bg-green-500' :
+                                          isGoNoGo && item.title.includes('Yellow') ? 'bg-yellow-500' :
+                                              isGoNoGo && item.title.includes('Red') ? 'bg-red-500' :
+                                                  'bg-blue-500'
+                                  }`}></span>
+                                                                    <span className="text-gray-700">{listItem}</span>
+                                                                </li>
+                                                            ))}
+                                                        </ul>
+                                                    )}
+                                                    {subItem.type === 'bullet' && (
+                                                        <div className="p-4 bg-white rounded-lg mb-3 shadow-sm">
+                                                            <strong className="text-gray-800">{subItem.title}:</strong>
+                                                            <span className="text-gray-700 ml-2">{subItem.content}</span>
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            ))}
+                                        </div>
                                     </div>
                                 )
                             }
@@ -259,7 +346,7 @@ const ProjectDetail = () => {
                             if (item.type === 'table' && item.component === 'MetricsTable') {
                                 return (
                                     <div key={itemIndex} className="mb-8">
-                                        <MetricsTable data={item.data} />
+                                        <MetricsTable data={item.data || []} />
                                     </div>
                                 )
                             }
@@ -267,7 +354,7 @@ const ProjectDetail = () => {
                             if (item.type === 'timeline' && item.component === 'RoadmapTimeline') {
                                 return (
                                     <div key={itemIndex} className="mb-8">
-                                        <RoadmapTimeline roadmapData={item.data} />
+                                        <RoadmapTimeline roadmapData={item.data || []} />
                                     </div>
                                 )
                             }
@@ -279,6 +366,9 @@ const ProjectDetail = () => {
                                             src={item.src}
                                             alt={item.alt}
                                             className="w-full h-auto rounded-lg shadow-lg"
+                                            onError={(e) => {
+                                                e.target.style.display = 'none'
+                                            }}
                                         />
                                         {item.caption && (
                                             <p className="text-sm text-gray-500 text-center mt-2">{item.caption}</p>
@@ -291,19 +381,19 @@ const ProjectDetail = () => {
                                 return (
                                     <div key={itemIndex} className="mb-8">
                                         <CodeBlock
-                                            code={item.code}
-                                            language={item.language}
+                                            code={item.code || ''}
+                                            language={item.language || 'javascript'}
                                             title={item.title}
                                         />
                                     </div>
                                 )
                             }
 
-                            if (item.type === 'list') {
+                            if (item.type === 'list' && item.items) {
                                 return (
-                                    <ul key={itemIndex} className="list-disc pl-6 text-gray-700 mb-4">
+                                    <ul key={itemIndex} className="list-disc pl-6 text-gray-700 mb-4 space-y-2">
                                         {item.items.map((listItem, listIndex) => (
-                                            <li key={listIndex} className="mb-2">{listItem}</li>
+                                            <li key={listIndex}>{listItem}</li>
                                         ))}
                                     </ul>
                                 )
@@ -314,6 +404,8 @@ const ProjectDetail = () => {
                     </div>
                 ))}
             </div>
+
+
         </div>
     )
 }
