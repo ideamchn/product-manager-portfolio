@@ -796,22 +796,16 @@ const projects = [
         "id": "guidemate",
         "title": "GuideMate",
         "description": "Mobile-first Digital Adoption Platform (DAP) for Indian enterprises, making software training 10x faster and 80% cheaper through in-app guidance.",
-        "status": "Launched",
+        "status": "MVP Development",
         "technologies": ["Android SDK", "Spring Boot", "PostgreSQL", "Redis", "MongoDB", "Kotlin"],
         "metrics": {
             "label": "Monthly Revenue",
             "value": "₹30L"
         },
         "timeline": "90 Days",
-        "team": "25 Active Customers",
+        "team": "5",
         "summary": "Building the \"Stripe for Enterprise Training\" - the first mobile-native Digital Adoption Platform (DAP) designed specifically for Indian enterprises, making software training 10x faster and 80% cheaper.",
         "originStory": "Started with a simple question - \"Beta, where can I find my UPI ID in PhonePe?\" This revealed a universal truth: if educated Indians struggle with simple apps, imagine 10 million employees battling complex enterprise software daily. The real crisis? 80% of Indian workforce is mobile-first, but all enterprise training is desktop-first.",
-        "currentTraction": {
-            "customers": "25 Enterprise Customers across 5 industries",
-            "revenue": "₹30 Lakhs Monthly Revenue growing 40% MoM",
-            "users": "15,000+ Active Users with 85% daily usage",
-            "deployment": "2 Days Deployment Time vs 60 days average"
-        },
         "burnRate": {
             "monthly": "₹8,50,000",
             "monthlyUSD": "$10,200 USD equivalent",
