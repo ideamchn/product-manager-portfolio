@@ -1,34 +1,35 @@
 import React from 'react'
 import ProjectTile from '../components/ProjectTile'
+import projects from '../data/projectsData'
 
-const projects = [
-  {
-    id: "knowledge-graph-nft-api",
-    title: "Knowledge Graph NFT API",
-    description: "API-first platform that enables personal knowledge graphs with NFT ownership model, targeting publishers and EdTech partners.",
-    status: "MVP Development",
-    technologies: ["Java 17", "Spring Boot", "PostgreSQL", "Redis", "Polygon", "IPFS"],
-    metrics: {
-      label: "Monthly Burn",
-      value: "₹55k"
-    },
-    timeline: "90 Days",
-    team: "2 Core"
-  },
-  {
-    id: "guidemate",
-    title: "GuideMate",
-    description: "Mobile-first Digital Adoption Platform (DAP) for Indian enterprises, making software training 10x faster and 80% cheaper through in-app guidance.",
-    status: "MVP Development",
-    technologies: ["Android SDK", "Spring Boot", "PostgreSQL", "Redis", "MongoDB", "Kotlin"],
-    metrics: {
-      label: "Monthly Revenue",
-      value: "₹30L"
-    },
-    timeline: "90 Days",
-    team: "25 Active Customers"
-  }
-]
+// const projects = [
+//   {
+//     id: "kg-nft-api",
+//     title: "Knowledge Graph NFT API",
+//     description: "API-first platform that enables personal knowledge graphs with NFT ownership model, targeting publishers and EdTech partners.",
+//     status: "MVP Development",
+//     technologies: ["Java 17", "Spring Boot", "PostgreSQL", "Redis", "Polygon", "IPFS"],
+//     metrics: {
+//       label: "Monthly Burn",
+//       value: "₹55k"
+//     },
+//     timeline: "90 Days",
+//     team: "2 Core"
+//   },
+//   {
+//     id: "guidemate",
+//     title: "GuideMate",
+//     description: "Mobile-first Digital Adoption Platform (DAP) for Indian enterprises, making software training 10x faster and 80% cheaper through in-app guidance.",
+//     status: "MVP Development",
+//     technologies: ["Android SDK", "Spring Boot", "PostgreSQL", "Redis", "MongoDB", "Kotlin"],
+//     metrics: {
+//       label: "Monthly Revenue",
+//       value: "₹30L"
+//     },
+//     timeline: "90 Days",
+//     team: "25 Active Customers"
+//   }
+// ]
 
 const Home = () => {
   return (
