@@ -792,12 +792,16 @@ const projects = [
         "description": "Mobile-first Digital Adoption Platform (DAP) for Indian enterprises, making software training 10x faster and 80% cheaper through in-app guidance.",
         "status": "MVP Development",
         "technologies": ["Android SDK", "Spring Boot", "PostgreSQL", "Redis", "MongoDB", "Kotlin"],
+
+
         "metrics": {
-            "label": "Monthly Revenue",
-            "value": "₹30L"
+            "label": "Monthly Burn",
+            "value": "₹85k"
         },
         "timeline": "90 Days",
-        "team": "5",
+        "team": "3 Core",
+
+
         "summary": "Building the first mobile-native Digital Adoption Platform (DAP) designed specifically for Indian enterprises, making software training 10x faster and 80% cheaper.",
         "originStory": "Started with a simple question my father asked me,- \"where can I find my UPI ID in PhonePe?\" This revealed a universal truth: if educated Indians struggle with simple apps, imagine 10 million employees battling complex enterprise software daily. The real crisis? 80% of Indian workforce is mobile-first, but all enterprise training is desktop-first.",
         "burnRate": {
