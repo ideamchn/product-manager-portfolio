@@ -14,202 +14,104 @@
     ],
     "metrics": {
       "label": "Monthly Burn",
-      "value": "₹55k",
-      "marketSize": "$6.94B by 2030 (36.6% CAGR)"
+      "value": "₹55k"
     },
     "timeline": "90 Days",
     "team": "2 Core",
-    "competitiveAnalysis": {
-      "competitors": [
-        {
-          "name": "OriginTrail (TRAC)",
-          "focus": "Enterprise-focused decentralized knowledge graph for supply chains",
-          "strengths": "Established protocol, enterprise adoption",
-          "gap": "Not designed for personal knowledge management"
-        },
-        {
-          "name": "Golden Protocol",
-          "focus": "Web3 Wikipedia - decentralized knowledge protocol",
-          "strengths": "Strong community, public knowledge focus",
-          "gap": "Public knowledge only, not personal learning paths"
-        },
-        {
-          "name": "The Graph Protocol",
-          "focus": "Blockchain data indexing",
-          "strengths": "Leading blockchain indexing solution",
-          "gap": "Blockchain data only, not general knowledge"
-        }
-      ],
-      "marketValidation": "Knowledge graph market growing from $1.06B (2023) to $6.94B (2030)",
-      "differentiation": "First personal knowledge graph NFT API with cross-platform SDK"
-    },
-    "financialAnalysis": {
-      "monthlyBurn": "₹55,000",
-      "runwayNeeded": "3 months (₹1.65L)",
-      "revenueTargets": [
-        "Month 1-2: API development, no revenue",
-        "Month 3: ₹20,000 (5 pilot partners × ₹4,000)",
-        "Month 4-6: ₹1,00,000/month (20 partners)",
-        "Year 1 Exit: ₹20,00,000 ARR"
-      ]
-    },
-    "riceFramework": [
+    "summary": "Positioned as 'Stripe for Knowledge NFTs', providing API-first personal knowledge graphs with blockchain-backed ownership.",
+    "sections": [
       {
-        "feature": "Basic Node Creation API",
-        "reach": 100,
-        "impact": 10,
-        "confidence": 100,
-        "effort": 1,
-        "score": 100,
-        "priority": "P0"
+        "title": "Competitive Landscape Analysis",
+        "content": [
+          {
+            "type": "subsection",
+            "title": "Existing Players & What They're Missing",
+            "content": [
+              {
+                "type": "bullet",
+                "title": "OriginTrail (TRAC)",
+                "content": "Enterprise-focused decentralized knowledge graph for supply chains. Gap: Not designed for personal knowledge management."
+              },
+              {
+                "type": "bullet",
+                "title": "Golden Protocol",
+                "content": "Web3 Wikipedia. Gap: Public knowledge only, not personal learning paths."
+              },
+              {
+                "type": "bullet",
+                "title": "The Graph Protocol",
+                "content": "Blockchain data indexing. Gap: Blockchain data only, not general knowledge."
+              }
+            ]
+          },
+          {
+            "type": "text",
+            "content": "Knowledge graph market projected to grow from $1.06B (2023) to $6.94B (2030) at 36.6% CAGR."
+          }
+        ]
       },
       {
-        "feature": "IPFS Integration",
-        "reach": 100,
-        "impact": 9,
-        "confidence": 90,
-        "effort": 2,
-        "score": 40.5,
-        "priority": "P0"
+        "title": "Bootstrap Burn Analysis",
+        "content": [
+          {
+            "type": "table",
+            "component": "MetricsTable",
+            "data": [
+              {
+                "feature": "Basic Node Creation API",
+                "reach": "100%",
+                "impact": "10",
+                "confidence": "100%",
+                "effort": "1",
+                "riceScore": "100",
+                "priority": "P0"
+              },
+              {
+                "feature": "IPFS Integration",
+                "reach": "100%",
+                "impact": "9",
+                "confidence": "90%",
+                "effort": "2",
+                "riceScore": "40.5",
+                "priority": "P0"
+              }
+            ]
+          }
+        ]
       },
       {
-        "feature": "NFT Minting API",
-        "reach": 80,
-        "impact": 10,
-        "confidence": 80,
-        "effort": 3,
-        "score": 21.3,
-        "priority": "P1"
+        "title": "90-Day MVP Roadmap",
+        "content": [
+          {
+            "type": "timeline",
+            "component": "RoadmapTimeline",
+            "data": [
+              {
+                "title": "Foundation",
+                "duration": "Week 1-2",
+                "effort": "80h",
+                "tasks": [
+                  "Setup Spring Boot",
+                  "Wallet auth"
+                ],
+                "deliverable": "Auth-protected API"
+              }
+            ]
+          }
+        ]
       },
       {
-        "feature": "Graph Query API",
-        "reach": 100,
-        "impact": 8,
-        "confidence": 90,
-        "effort": 2,
-        "score": 36,
-        "priority": "P0"
-      },
-      {
-        "feature": "SDK Development",
-        "reach": 60,
-        "impact": 7,
-        "confidence": 70,
-        "effort": 4,
-        "score": 7.4,
-        "priority": "P2"
+        "title": "Technical Architecture",
+        "content": [
+          {
+            "type": "image",
+            "src": "/images/kg-nft-architecture.png",
+            "alt": "Technical Architecture Diagram",
+            "caption": "API-first architecture for Knowledge Graph NFT API"
+          }
+        ]
       }
-    ],
-    "roadmap": [
-      {
-        "phase": "Foundation (Week 1-2)",
-        "effort": "80h",
-        "tasks": [
-          "Setup Spring Boot with JWT auth",
-          "Wallet authentication integration",
-          "PostgreSQL schema design",
-          "Basic API structure"
-        ],
-        "deliverable": "Auth-protected API with basic endpoints"
-      },
-      {
-        "phase": "Core APIs (Week 3-6)",
-        "effort": "160h",
-        "tasks": [
-          "Node creation/update/delete APIs",
-          "Graph relationship APIs",
-          "IPFS integration for data storage",
-          "Query optimization"
-        ],
-        "deliverable": "Functional knowledge graph API"
-      },
-      {
-        "phase": "NFT Integration (Week 7-10)",
-        "effort": "120h",
-        "tasks": [
-          "Polygon smart contract development",
-          "NFT minting API",
-          "Ownership verification",
-          "Transfer functionality"
-        ],
-        "deliverable": "NFT-backed knowledge graphs"
-      },
-      {
-        "phase": "Polish & Launch (Week 11-12)",
-        "effort": "80h",
-        "tasks": [
-          "SDK development",
-          "Documentation",
-          "Partner onboarding",
-          "Performance optimization"
-        ],
-        "deliverable": "Production-ready API with SDK"
-      }
-    ],
-    "technicalArchitecture": {
-      "principles": [
-        "API-first design with REST endpoints",
-        "Microservices architecture for scalability",
-        "IPFS for decentralized storage",
-        "PostgreSQL for relational data",
-        "Redis for caching and sessions",
-        "Polygon for NFT smart contracts"
-      ]
-    },
-    "integrationStrategies": [
-      {
-        "partner": "Kindle/eReaders",
-        "use_case": "Highlight → Knowledge Node",
-        "apis": ["POST /api/nodes", "GET /api/graph/{userId}"],
-        "value": "Automatic knowledge capture from reading"
-      },
-      {
-        "partner": "Notion/Obsidian",
-        "use_case": "Notes → Structured Knowledge",
-        "apis": ["POST /api/import", "GET /api/export"],
-        "value": "Seamless knowledge management integration"
-      },
-      {
-        "partner": "EdTech Platforms",
-        "use_case": "Courses → Learning Paths",
-        "apis": ["POST /api/paths", "GET /api/recommendations"],
-        "value": "Personalized learning experiences"
-      }
-    ],
-    "successMetrics": {
-      "technical": [
-        "API response time < 200ms (p95)",
-        "99.9% uptime SLA",
-        "Support 10,000 concurrent users",
-        "< 2s for complex graph queries"
-      ],
-      "business": [
-        "20 paying partners in 6 months",
-        "₹20L ARR by end of Year 1",
-        "50,000 active knowledge graphs",
-        "70% partner retention rate"
-      ]
-    },
-    "goNoGoFramework": {
-      "greenLights": [
-        "5+ partners signed LOI",
-        "API performance meets targets",
-        "NFT costs < ₹10 per mint",
-        "Monthly burn < ₹60k"
-      ],
-      "yellowLights": [
-        "3-4 partners interested",
-        "API needs optimization",
-        "NFT costs ₹10-20",
-        "Monthly burn ₹60-80k"
-      ],
-      "redLights": [
-        "< 3 partner interest",
-        "Major technical blockers",
-        "NFT costs > ₹20",
-        "Monthly burn > ₹80k"
-      ]
-    }
+    ]
   },
   {
     "id": "guidemate",
@@ -231,7 +133,7 @@
     "timeline": "90 Days",
     "team": "25 Active Customers",
     "summary": "Building the 'Stripe for Enterprise Training' - the first mobile-native Digital Adoption Platform (DAP) designed specifically for Indian enterprises, making software training 10x faster and 80% cheaper.",
-    "originStory": "Started with a simple question - \"Beta, where can I find my UPI ID in PhonePe?\" This revealed a universal truth: if educated Indians struggle with simple apps, imagine 10 million employees battling complex enterprise software daily. The real crisis? 80% of Indian workforce is mobile-first, but all enterprise training is desktop-first.",
+
     "highlights": [
       "Mobile-first approach differentiating from desktop-centric traditional solutions",
       "Indian enterprise focus vs global one-size-fits-all approaches",
@@ -251,7 +153,7 @@
         "content": [
           {
             "type": "text",
-            "content": "Digital Adoption Platform market projected to grow from $2.5B (2023) to $18.6B (2030) at 32.2% CAGR globally. In India, enterprise training market growing from ₹25,000 Cr (2023) to ₹37,500 Cr by 2030 at 15% CAGR, with 70% of digital transformation projects failing due to poor user adoption."
+            "content": "Digital Adoption Platform (DAP) market projected to grow from $2.5B (2023) to $18.6B (2030) at 32.2% CAGR globally. In India, enterprise training market growing from ₹25,000 Cr (2023) to ₹37,500 Cr by 2030 at 15% CAGR, with 70% of digital transformation projects failing due to poor user adoption."
           }
         ]
       },

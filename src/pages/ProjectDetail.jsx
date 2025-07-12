@@ -625,12 +625,6 @@ const ProjectDetail = () => {
                 {/* GuideMate-specific sections */}
                 {project.id === "guidemate" && (
                     <>
-                        {/* Origin Story */}
-                        <section className="bg-white rounded-lg shadow-md p-8 mb-8">
-                            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Origin Story</h2>
-                            <p className="text-gray-700 text-lg italic">{project.originStory}</p>
-                        </section>
-
                         {/* Current Traction */}
                         <section className="bg-white rounded-lg shadow-md p-8 mb-8">
                             <h2 className="text-2xl font-bold text-gray-900 mb-6">Current Traction</h2>
