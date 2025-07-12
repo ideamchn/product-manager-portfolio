@@ -210,5 +210,262 @@
         "Monthly burn > ₹80k"
       ]
     }
+  },
+  {
+    "id": "guidemate",
+    "title": "GuideMate",
+    "description": "Mobile-first Digital Adoption Platform (DAP) for Indian enterprises, making software training 10x faster and 80% cheaper through in-app guidance.",
+    "status": "Launched",
+    "technologies": [
+      "Android SDK",
+      "Spring Boot",
+      "PostgreSQL",
+      "Redis",
+      "MongoDB",
+      "Kotlin"
+    ],
+    "metrics": {
+      "label": "Monthly Revenue",
+      "value": "₹30L"
+    },
+    "timeline": "90 Days",
+    "team": "25 Active Customers",
+    "summary": "Building the 'Stripe for Enterprise Training' - the first mobile-native Digital Adoption Platform (DAP) designed specifically for Indian enterprises, making software training 10x faster and 80% cheaper.",
+    "originStory": "Started with a simple question - \"Beta, where can I find my UPI ID in PhonePe?\" This revealed a universal truth: if educated Indians struggle with simple apps, imagine 10 million employees battling complex enterprise software daily. The real crisis? 80% of Indian workforce is mobile-first, but all enterprise training is desktop-first.",
+    "highlights": [
+      "Mobile-first approach differentiating from desktop-centric traditional solutions",
+      "Indian enterprise focus vs global one-size-fits-all approaches",
+      "Cross-platform by design for seamless integration with any enterprise software",
+      "B2B SaaS model with rapid deployment and immediate ROI",
+      "Offline-first design addressing India's connectivity challenges"
+    ],
+    "currentTraction": {
+      "customers": "25 Enterprise Customers across 5 industries",
+      "revenue": "₹30 Lakhs Monthly Revenue growing 40% MoM",
+      "users": "15,000+ Active Users with 85% daily usage",
+      "deployment": "2 Days Deployment Time vs 60 days average"
+    },
+    "sections": [
+      {
+        "title": "Market Validation",
+        "content": [
+          {
+            "type": "text",
+            "content": "Digital Adoption Platform market projected to grow from $2.5B (2023) to $18.6B (2030) at 32.2% CAGR globally. In India, enterprise training market growing from ₹25,000 Cr (2023) to ₹37,500 Cr by 2030 at 15% CAGR, with 70% of digital transformation projects failing due to poor user adoption."
+          }
+        ]
+      },
+      {
+        "title": "Competitive Landscape Analysis",
+        "content": [
+          {
+            "type": "subsection",
+            "title": "Existing Players & What They're Missing",
+            "content": [
+              {
+                "type": "bullet",
+                "title": "Whatfix",
+                "content": "Global DAP leader with enterprise focus. Gap: Limited mobile support, 2-3 month deployment, ₹2,00,000/month starting price."
+              },
+              {
+                "type": "bullet",
+                "title": "WalkMe",
+                "content": "Market leader with advanced analytics. Gap: Desktop-first, expensive, not designed for Indian market needs."
+              },
+              {
+                "type": "bullet",
+                "title": "Traditional Enterprise Training",
+                "content": "Classroom and e-learning solutions. Gap: 3-6 month deployment, no mobile support, minimal ROI tracking."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "RICE Framework Prioritization",
+        "content": [
+          {
+            "type": "table",
+            "component": "MetricsTable",
+            "data": [
+              {
+                "feature": "Mobile SDK Core",
+                "reach": "100%",
+                "impact": "10",
+                "confidence": "100%",
+                "effort": "1",
+                "riceScore": "100",
+                "priority": "P0"
+              },
+              {
+                "feature": "Android Accessibility API",
+                "reach": "100%",
+                "impact": "10",
+                "confidence": "95%",
+                "effort": "1.2",
+                "riceScore": "79",
+                "priority": "P0"
+              },
+              {
+                "feature": "Multi-language Support",
+                "reach": "90%",
+                "impact": "9",
+                "confidence": "90%",
+                "effort": "1.5",
+                "riceScore": "54",
+                "priority": "P0"
+              },
+              {
+                "feature": "Offline Mode",
+                "reach": "80%",
+                "impact": "9",
+                "confidence": "85%",
+                "effort": "2",
+                "riceScore": "31",
+                "priority": "P0"
+              },
+              {
+                "feature": "Voice Guidance",
+                "reach": "70%",
+                "impact": "8",
+                "confidence": "80%",
+                "effort": "2.5",
+                "riceScore": "18",
+                "priority": "P1"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "90-Day MVP Roadmap",
+        "content": [
+          {
+            "type": "timeline",
+            "component": "RoadmapTimeline",
+            "data": [
+              {
+                "title": "Foundation",
+                "duration": "Week 1-2",
+                "effort": "80h",
+                "tasks": [
+                  "Android SDK setup and architecture",
+                  "Core accessibility API integration",
+                  "Basic user authentication",
+                  "PostgreSQL database configuration"
+                ],
+                "deliverable": "Functional mobile SDK with basic app detection"
+              },
+              {
+                "title": "Core Training APIs",
+                "duration": "Week 3-4",
+                "effort": "80h",
+                "tasks": [
+                  "Step-by-step guide creation engine",
+                  "Screen overlay and highlighting system",
+                  "Voice guidance integration",
+                  "Multi-language text support"
+                ],
+                "deliverable": "Can create and deliver basic training guides"
+              },
+              {
+                "title": "Enterprise Integration",
+                "duration": "Week 5-6",
+                "effort": "80h",
+                "tasks": [
+                  "ERP system connectors (Tally, SAP)",
+                  "CRM platform integration (Salesforce, Zoho)",
+                  "Progress tracking and analytics",
+                  "Admin dashboard"
+                ],
+                "deliverable": "Functional enterprise-ready platform"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Technical Architecture",
+        "content": [
+          {
+            "type": "subsection",
+            "title": "Architecture Layers",
+            "content": [
+              {
+                "type": "list",
+                "items": [
+                  "Enterprise Apps Layer: Tally, SAP, Salesforce, Zoho, Custom Apps",
+                  "API Gateway: Kong/Nginx with rate limiting and authentication",
+                  "Application Layer: Spring Boot API, Redis Cache, Mobile SDK",
+                  "Data Storage: PostgreSQL, MongoDB, File Storage"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "subsection",
+            "title": "Design Principles",
+            "content": [
+              {
+                "type": "list",
+                "items": [
+                  "Mobile-first design with Android SDK priority",
+                  "Offline-first architecture for poor connectivity",
+                  "Multi-tenant SaaS with enterprise security",
+                  "API-first approach for seamless integrations",
+                  "Microservices architecture for scalability"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "successMetrics": {
+      "technical": [
+        { "metric": "Platform Uptime", "target": "99.9%" },
+        { "metric": "Response Time", "target": "100ms" },
+        { "metric": "Daily Active Users", "target": "15,000+" },
+        { "metric": "Task Completion Rate", "target": "87%" }
+      ],
+      "business": [
+        { "metric": "Enterprise Customers", "target": "25 (Current), 3,300 (Year 5)" },
+        { "metric": "Monthly Revenue", "target": "₹30L (Current), ₹16.5 Cr (Year 5)" },
+        { "metric": "Customer Acquisition Cost", "target": "₹75,000" },
+        { "metric": "Customer Lifetime Value", "target": "₹30 Lakhs" }
+      ],
+      "customerSuccess": [
+        { "metric": "Training Time Reduction", "target": "70%" },
+        { "metric": "Task Success Rate", "target": "87%" },
+        { "metric": "Customer ROI", "target": "30 days payback" },
+        { "metric": "User Satisfaction", "target": "4.8/5 NPS Score" },
+        { "metric": "Deployment Success", "target": "100% (vs 70% industry average)" }
+      ]
+    },
+    "financialProjections": [
+      { "year": "Current", "customers": 25, "arpu": "₹30k", "revenue": "₹3.6 Cr", "growth": "40% MoM" },
+      { "year": "Year 1", "customers": 200, "arpu": "₹30k", "revenue": "₹10 Cr", "growth": "-" },
+      { "year": "Year 2", "customers": 600, "arpu": "₹35k", "revenue": "₹30 Cr", "growth": "3x" },
+      { "year": "Year 3", "customers": 1200, "arpu": "₹40k", "revenue": "₹65 Cr", "growth": "2.2x" },
+      { "year": "Year 4", "customers": 2100, "arpu": "₹42k", "revenue": "₹125 Cr", "growth": "1.9x" },
+      { "year": "Year 5", "customers": 3300, "arpu": "₹45k", "revenue": "₹200 Cr", "growth": "1.6x" }
+    ],
+    "investmentAsk": {
+      "amount": "₹10 Crores Pre-Seed Investment",
+      "valuation": "₹50 Cr (20% equity)",
+      "timeline": "Transform enterprise training in 90 days",
+      "vision": "Making 10 million Indian employees productive from Day 1",
+      "useOfFunds": [
+        { "category": "Product Development", "percentage": "40%", "amount": "₹4 Cr", "description": "Mobile SDK, core platform, 50+ app integrations" },
+        { "category": "Sales & Marketing", "percentage": "35%", "amount": "₹3.5 Cr", "description": "Enterprise sales team, channel partnerships" },
+        { "category": "Customer Success", "percentage": "15%", "amount": "₹1.5 Cr", "description": "Ensure 100% deployment success" },
+        { "category": "Operations", "percentage": "10%", "amount": "₹1 Cr", "description": "18-month operational runway" }
+      ],
+      "returns": [
+        { "scenario": "Conservative Exit (3x Revenue)", "valuation": "₹600 Cr", "investorReturn": "₹120 Cr", "multiple": "12x" },
+        { "scenario": "Base Case Exit (4x Revenue)", "valuation": "₹800 Cr", "investorReturn": "₹160 Cr", "multiple": "16x" },
+        { "scenario": "Aggressive Exit (5x Revenue)", "valuation": "₹1,000 Cr", "investorReturn": "₹200 Cr", "multiple": "20x" }
+      ]
+    }
   }
 ]
