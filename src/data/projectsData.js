@@ -23,12 +23,6 @@ const projects = [
         "market": "$6.94B by 2030",
         "summary": "Positioned as 'Stripe for Knowledge NFTs', providing API-first personal knowledge graphs with blockchain-backed ownership.",
         "originStory": "Born from frustration watching YouTube tutorials repeatedly to remember complex concepts. We realized knowledge should be owned, not rented. If you spend 100 hours learning something, why shouldn't you own that knowledge graph? Traditional learning platforms delete your progress when you stop paying. We're building knowledge as a permanent asset.",
-        "currentTraction": {
-            "partnerships": "3 EdTech platforms committed to pilot",
-            "developers": "150+ developers on waitlist",
-            "content": "10,000+ knowledge nodes ready for migration",
-            "funding": "₹50L angel round closed"
-        },
         "burnRate": {
             "monthly": "₹4,50,000",
             "monthlyUSD": "$5,400 USD equivalent",
