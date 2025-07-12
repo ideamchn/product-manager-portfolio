@@ -19,7 +19,7 @@ const projects = [
     id: "guidemate",
     title: "GuideMate",
     description: "Mobile-first Digital Adoption Platform (DAP) for Indian enterprises, making software training 10x faster and 80% cheaper through in-app guidance.",
-    status: "Launched",
+    status: "MVP Development",
     technologies: ["Android SDK", "Spring Boot", "PostgreSQL", "Redis", "MongoDB", "Kotlin"],
     metrics: {
       label: "Monthly Revenue",
