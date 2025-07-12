@@ -261,6 +261,358 @@ const projectData = {
             protocol: "The Graph, OriginTrail, IPFS for technical integration",
             global: "Springer, Elsevier, Academic publishers for scale"
         }
+    },
+    "guidemate": {
+        id: "guidemate",
+        title: "GuideMate",
+        subtitle: "MVP Feasibility & Strategic Roadmap",
+        description: "Mobile-first Digital Adoption Platform (DAP) for Indian enterprises",
+        status: "MVP Development",
+        technologies: ["Android SDK", "Spring Boot", "PostgreSQL", "Redis", "MongoDB", "Kotlin"],
+        metrics: {
+            label: "Monthly Revenue",
+            value: "₹30L"
+        },
+        timeline: "90 Days",
+        team: "25 Active Customers",
+        domain: "Enterprise Software • Digital Adoption • Mobile-First Training",
+        market: "₹37,500 Crore by 2030",
+        summary: "Building the \"Stripe for Enterprise Training\" - the first mobile-native Digital Adoption Platform (DAP) designed specifically for Indian enterprises, making software training 10x faster and 80% cheaper.",
+        originStory: "Started with a simple question - \"Beta, where can I find my UPI ID in PhonePe?\" This revealed a universal truth: if educated Indians struggle with simple apps, imagine 10 million employees battling complex enterprise software daily. The real crisis? 80% of Indian workforce is mobile-first, but all enterprise training is desktop-first.",
+        highlights: [
+            "Mobile-first approach differentiating from desktop-centric traditional solutions",
+            "Indian enterprise focus vs global one-size-fits-all approaches",
+            "Cross-platform by design for seamless integration with any enterprise software",
+            "B2B SaaS model with rapid deployment and immediate ROI",
+            "Offline-first design addressing India's connectivity challenges"
+        ],
+        currentTraction: {
+            customers: "25 Enterprise Customers across 5 industries",
+            revenue: "₹30 Lakhs Monthly Revenue growing 40% MoM",
+            users: "15,000+ Active Users with 85% daily usage",
+            deployment: "2 Days Deployment Time vs 60 days average"
+        },
+        burnRate: {
+            monthly: "₹8,50,000",
+            monthlyUSD: "$10,200 USD equivalent",
+            runway18Month: "₹15,30,000",
+            runway18MonthUSD: "$18,400 USD equivalent"
+        },
+        revenueTargets: [
+            { month: 6, description: "Break-even (₹8,50,000/month)" },
+            { month: 12, description: "600 customers (₹1,80,00,000/month)" },
+            { month: 18, description: "1,200 customers (₹3,60,00,000/month)" }
+        ],
+        competitiveLandscape: [
+            {
+                name: "Whatfix",
+                description: "Global DAP leader with enterprise focus",
+                strengths: "Mature platform, enterprise adoption, $90M funding",
+                gap: "Limited mobile support, 2-3 month deployment, ₹2,00,000/month starting price"
+            },
+            {
+                name: "Traditional Enterprise Training",
+                description: "Classroom and e-learning solutions",
+                strengths: "Established market, comprehensive content",
+                gap: "3-6 month deployment, no mobile support, minimal ROI tracking"
+            },
+            {
+                name: "WalkMe",
+                description: "Enterprise-focused digital adoption platform",
+                strengths: "Market leader, advanced analytics, global presence",
+                gap: "Desktop-first, expensive, not designed for Indian market needs"
+            },
+            {
+                name: "Apty",
+                description: "Employee onboarding and training platform",
+                strengths: "Good UI/UX, workflow automation",
+                gap: "Limited mobile capabilities, high cost, English-only"
+            }
+        ],
+        riceFramework: [
+            {
+                feature: "Mobile SDK Core",
+                reach: 100,
+                impact: 10,
+                confidence: 100,
+                effort: 1,
+                score: 100,
+                priority: "P0"
+            },
+            {
+                feature: "Android Accessibility API",
+                reach: 100,
+                impact: 10,
+                confidence: 95,
+                effort: 1.2,
+                score: 79,
+                priority: "P0"
+            },
+            {
+                feature: "Multi-language Support",
+                reach: 90,
+                impact: 9,
+                confidence: 90,
+                effort: 1.5,
+                score: 54,
+                priority: "P0"
+            },
+            {
+                feature: "Offline Mode",
+                reach: 80,
+                impact: 9,
+                confidence: 85,
+                effort: 2,
+                score: 31,
+                priority: "P0"
+            },
+            {
+                feature: "Voice Guidance",
+                reach: 70,
+                impact: 8,
+                confidence: 80,
+                effort: 2.5,
+                score: 18,
+                priority: "P1"
+            },
+            {
+                feature: "AI-Powered Recommendations",
+                reach: 60,
+                impact: 8,
+                confidence: 70,
+                effort: 3,
+                score: 11,
+                priority: "P1"
+            },
+            {
+                feature: "Advanced Analytics",
+                reach: 70,
+                impact: 7,
+                confidence: 60,
+                effort: 3,
+                score: 10,
+                priority: "P2"
+            },
+            {
+                feature: "API Marketplace",
+                reach: 50,
+                impact: 6,
+                confidence: 70,
+                effort: 4,
+                score: 5,
+                priority: "P2"
+            },
+            {
+                feature: "White-label Solution",
+                reach: 40,
+                impact: 5,
+                confidence: 80,
+                effort: 5,
+                score: 3,
+                priority: "P3"
+            }
+        ],
+        roadmap: [
+            {
+                phase: "Week 1-2: Foundation",
+                effort: "80 hours",
+                tasks: [
+                    "Android SDK setup and architecture",
+                    "Core accessibility API integration",
+                    "Basic user authentication",
+                    "PostgreSQL database configuration",
+                    "REST API framework"
+                ],
+                deliverable: "Functional mobile SDK with basic app detection"
+            },
+            {
+                phase: "Week 3-4: Core Training APIs",
+                effort: "80 hours",
+                tasks: [
+                    "Step-by-step guide creation engine",
+                    "Screen overlay and highlighting system",
+                    "Voice guidance integration",
+                    "Basic workflow recording",
+                    "Multi-language text support"
+                ],
+                deliverable: "Can create and deliver basic training guides"
+            },
+            {
+                phase: "Week 5-6: Enterprise Integration",
+                effort: "80 hours",
+                tasks: [
+                    "ERP system connectors (Tally, SAP)",
+                    "CRM platform integration (Salesforce, Zoho)",
+                    "Custom app integration framework",
+                    "Progress tracking and analytics",
+                    "Admin dashboard"
+                ],
+                deliverable: "Functional enterprise-ready platform"
+            },
+            {
+                phase: "Week 7-8: Advanced Features",
+                effort: "60 hours",
+                tasks: [
+                    "Offline mode implementation",
+                    "AI-powered task suggestions",
+                    "Performance optimization",
+                    "Security and compliance features",
+                    "Error handling and recovery"
+                ],
+                deliverable: "Production-ready core features"
+            },
+            {
+                phase: "Week 9-10: Pilot Deployment",
+                effort: "60 hours",
+                tasks: [
+                    "First customer onboarding",
+                    "Custom feature development",
+                    "Performance monitoring",
+                    "User feedback integration",
+                    "Bug fixes and optimization"
+                ],
+                deliverable: "Live pilot with 3 enterprise customers"
+            },
+            {
+                phase: "Week 11-12: Scale & Polish",
+                effort: "60 hours",
+                tasks: [
+                    "Analytics dashboard enhancement",
+                    "Monitoring and alerting system",
+                    "CI/CD pipeline setup",
+                    "Security audit and compliance",
+                    "Documentation and training materials"
+                ],
+                deliverable: "Scalable, production-ready MVP"
+            }
+        ],
+        technicalArchitecture: {
+            layers: [
+                { name: "Enterprise Apps Layer", components: ["Tally", "SAP", "Salesforce", "Zoho", "Custom Apps"] },
+                { name: "API Gateway", components: ["Kong/Nginx", "Rate Limiting", "Authentication"] },
+                { name: "Application Layer", components: ["Spring Boot API", "Redis Cache", "Mobile SDK"] },
+                { name: "Data Storage", components: ["PostgreSQL", "MongoDB", "File Storage"] }
+            ],
+            designPrinciples: [
+                "Mobile-first design with Android SDK priority",
+                "Offline-first architecture for poor connectivity",
+                "Multi-tenant SaaS with enterprise security",
+                "API-first approach for seamless integrations",
+                "Microservices architecture for scalability"
+            ]
+        },
+        integrationStrategies: [
+            {
+                partner: "Tally Integration",
+                description: "ERP and accounting software guidance",
+                features: [
+                    "Workflow automation and step-by-step guidance",
+                    "Error prevention and validation",
+                    "GST compliance training",
+                    "Financial reporting assistance"
+                ],
+                value: "70% reduction in training time, 95% accuracy improvement"
+            },
+            {
+                partner: "Salesforce Integration",
+                description: "CRM adoption and field sales enablement",
+                features: [
+                    "Mobile-first sales process training",
+                    "Lead management workflow guidance",
+                    "Pipeline management automation",
+                    "Performance analytics integration"
+                ],
+                value: "3x faster adoption, 60% increase in CRM usage"
+            },
+            {
+                partner: "Custom Enterprise Apps",
+                description: "Proprietary software training and support",
+                features: [
+                    "Automated guide generation",
+                    "User behavior analytics",
+                    "Performance optimization",
+                    "Custom workflow creation"
+                ],
+                value: "2-day deployment vs 2-3 month traditional training"
+            }
+        ],
+        successMetrics: {
+            technical: [
+                { metric: "Platform Uptime", target: "99.9%" },
+                { metric: "Response Time", target: "100ms" },
+                { metric: "Daily Active Users", target: "15,000+" },
+                { metric: "Guides Created", target: "5,000+" },
+                { metric: "Task Completion Rate", target: "87%" }
+            ],
+            business: [
+                { metric: "Enterprise Customers", target: "25 (Current), 3,300 (Year 5)" },
+                { metric: "Monthly Revenue", target: "₹30L (Current), ₹16.5 Cr (Year 5)" },
+                { metric: "Customer Acquisition Cost", target: "₹75,000" },
+                { metric: "Customer Lifetime Value", target: "₹30 Lakhs" },
+                { metric: "Monthly Churn Rate", target: "2%" }
+            ],
+            customerSuccess: [
+                { metric: "Training Time Reduction", target: "70%" },
+                { metric: "Task Success Rate", target: "87%" },
+                { metric: "Customer ROI", target: "30 days payback" },
+                { metric: "User Satisfaction", target: "4.8/5 NPS Score" },
+                { metric: "Deployment Success", target: "100% (vs 70% industry average)" }
+            ]
+        },
+        goNoGoDecision: {
+            greenLights: [
+                "3+ committed pilot customers pre-launch confirmed",
+                "Technical POC completed in 2 weeks with core features",
+                "₹10 Cr funding secured for 18-month runway",
+                "Experienced founder with 17+ years product experience",
+                "Clear market differentiation as only mobile-first DAP for Indian enterprises",
+                "Proven traction with 25 customers and 40% MoM growth"
+            ],
+            yellowLights: [
+                "Only 1-2 pilot customers committed",
+                "₹5 Cr funding with 12-month runway",
+                "Technical complexity requiring extended development",
+                "Competitive pressure from global players entering Indian market"
+            ],
+            redLights: [
+                "No customer interest after 100+ enterprise conversations",
+                "Technical barriers beyond team capability",
+                "Less than ₹3 Cr funding available",
+                "Regulatory compliance issues in target industries",
+                "Key talent acquisition challenges"
+            ]
+        },
+        partnershipStrategy: {
+            immediate: "TCS, Infosys, Wipro subsidiaries for enterprise reach\nRegional IT consultants for SMB market penetration\nTraining companies for channel partnerships",
+            technology: "Tally Solutions for accounting software integration\nZoho for CRM and business app ecosystem\nMicrosoft for Office 365 and Teams integration",
+            industry: "Manufacturing associations for ERP adoption\nHealthcare technology providers for compliance training\nBFSI technology vendors for regulatory training",
+            global: "Southeast Asian system integrators\nMiddle Eastern enterprise software distributors\nAfrican mobile technology partners"
+        },
+        financialProjections: [
+            { year: "Current", customers: 25, arpu: "₹30k", revenue: "₹3.6 Cr", growth: "40% MoM" },
+            { year: "Year 1", customers: 200, arpu: "₹30k", revenue: "₹10 Cr", growth: "-" },
+            { year: "Year 2", customers: 600, arpu: "₹35k", revenue: "₹30 Cr", growth: "3x" },
+            { year: "Year 3", customers: 1200, arpu: "₹40k", revenue: "₹65 Cr", growth: "2.2x" },
+            { year: "Year 4", customers: 2100, arpu: "₹42k", revenue: "₹125 Cr", growth: "1.9x" },
+            { year: "Year 5", customers: 3300, arpu: "₹45k", revenue: "₹200 Cr", growth: "1.6x" }
+        ],
+        investmentAsk: {
+            amount: "₹10 Crores Pre-Seed Investment",
+            valuation: "₹50 Cr (20% equity)",
+            timeline: "Transform enterprise training in 90 days",
+            vision: "Making 10 million Indian employees productive from Day 1",
+            useOfFunds: [
+                { category: "Product Development", percentage: "40%", amount: "₹4 Cr", description: "Mobile SDK, core platform, 50+ app integrations" },
+                { category: "Sales & Marketing", percentage: "35%", amount: "₹3.5 Cr", description: "Enterprise sales team, channel partnerships" },
+                { category: "Customer Success", percentage: "15%", amount: "₹1.5 Cr", description: "Ensure 100% deployment success" },
+                { category: "Operations", percentage: "10%", amount: "₹1 Cr", description: "18-month operational runway" }
+            ],
+            returns: [
+                { scenario: "Conservative Exit (3x Revenue)", valuation: "₹600 Cr", investorReturn: "₹120 Cr", multiple: "12x" },
+                { scenario: "Base Case Exit (4x Revenue)", valuation: "₹800 Cr", investorReturn: "₹160 Cr", multiple: "16x" },
+                { scenario: "Aggressive Exit (5x Revenue)", valuation: "₹1,000 Cr", investorReturn: "₹200 Cr", multiple: "20x" }
+            ]
+        }
     }
 }
 
@@ -621,6 +973,184 @@ const ProjectDetail = () => {
                         </div>
                     </div>
                 </section>
+
+                // Add these sections to ProjectDetail.jsx after the Partnership Strategy section
+                // Only render these for the GuideMate project:
+
+                {project.id === "guidemate" && (
+                    <>
+                        {/* Origin Story */}
+                        <section className="bg-white rounded-lg shadow-md p-8 mb-8">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-4">The Origin Story</h2>
+                            <p className="text-gray-700 text-lg italic">{project.originStory}</p>
+                        </section>
+
+                        {/* Current Traction */}
+                        <section className="bg-white rounded-lg shadow-md p-8 mb-8">
+                            <h2 className="text-2xl font-bold text-gray-900 mb-6">Current Traction</h2>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                <div className="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-6">
+                                    <h3 className="text-lg font-semibold text-green-800 mb-4">Business Metrics</h3>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">{project.currentTraction.customers}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-green-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">{project.currentTraction.revenue}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-6">
+                                    <h3 className="text-lg font-semibold text-blue-800 mb-4">Product Metrics</h3>
+                                    <div className="space-y-3">
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">{project.currentTraction.users}</span>
+                                        </div>
+                                        <div className="flex items-center">
+                                            <svg className="w-5 h-5 text-blue-600 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                                            </svg>
+                                            <span className="text-gray-700">{project.currentTraction.deployment}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Customer Success Metrics */}
+                        {project.successMetrics.customerSuccess && (
+                            <section className="bg-white rounded-lg shadow-md p-8 mb-8">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Customer Success Metrics</h2>
+                                <div className="grid md:grid-cols-3 gap-6">
+                                    {project.successMetrics.customerSuccess.map((metric, index) => (
+                                        <div key={index} className="text-center p-4 bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg">
+                                            <div className="text-2xl font-bold text-purple-600 mb-2">{metric.target}</div>
+                                            <div className="text-sm text-gray-700">{metric.metric}</div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </section>
+                        )}
+
+                        {/* Financial Projections */}
+                        {project.financialProjections && (
+                            <section className="bg-white rounded-lg shadow-md p-8 mb-8">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">5-Year Financial Projections</h2>
+                                <div className="overflow-x-auto">
+                                    <table className="min-w-full border border-gray-200">
+                                        <thead className="bg-gray-50">
+                                        <tr>
+                                            <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">Year</th>
+                                            <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Customers</th>
+                                            <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">ARPU</th>
+                                            <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Revenue</th>
+                                            <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase">Growth</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody className="bg-white divide-y divide-gray-200">
+                                        {project.financialProjections.map((projection, index) => (
+                                            <tr key={index} className={index === 0 ? "bg-blue-50" : "hover:bg-gray-50"}>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{projection.year}</td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">{projection.customers}</td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-700 text-center">{projection.arpu}</td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-semibold text-gray-900 text-center">{projection.revenue}</td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-green-600 font-medium text-center">{projection.growth}</td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </section>
+                        )}
+
+                        {/* Investment Ask */}
+                        {project.investmentAsk && (
+                            <section className="bg-gradient-to-br from-indigo-50 to-purple-50 rounded-lg shadow-md p-8 mb-8">
+                                <h2 className="text-2xl font-bold text-gray-900 mb-6">Investment Opportunity</h2>
+
+                                <div className="bg-white rounded-lg p-6 mb-6">
+                                    <h3 className="text-3xl font-bold text-indigo-600 mb-2">{project.investmentAsk.amount}</h3>
+                                    <p className="text-lg text-gray-700 mb-2">{project.investmentAsk.valuation}</p>
+                                    <p className="text-gray-600">{project.investmentAsk.timeline}</p>
+                                    <p className="text-lg font-medium text-purple-600 mt-4">{project.investmentAsk.vision}</p>
+                                </div>
+
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Use of Funds</h3>
+                                        <div className="space-y-3">
+                                            {project.investmentAsk.useOfFunds.map((fund, index) => (
+                                                <div key={index} className="bg-white rounded-lg p-4">
+                                                    <div className="flex justify-between items-center mb-2">
+                                                        <span className="font-medium text-gray-900">{fund.category}</span>
+                                                        <span className="text-indigo-600 font-semibold">{fund.amount} ({fund.percentage})</span>
+                                                    </div>
+                                                    <p className="text-sm text-gray-600">{fund.description}</p>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-gray-900 mb-4">Expected Returns</h3>
+                                        <div className="space-y-3">
+                                            {project.investmentAsk.returns.map((returnScenario, index) => (
+                                                <div key={index} className={`rounded-lg p-4 ${
+                                                    index === 1 ? 'bg-green-100 border-2 border-green-500' : 'bg-white'
+                                                }`}>
+                                                    <div className="font-medium text-gray-900 mb-1">{returnScenario.scenario}</div>
+                                                    <div className="flex justify-between text-sm">
+                                                        <span className="text-gray-600">Valuation: {returnScenario.valuation}</span>
+                                                        <span className="font-semibold text-green-600">{returnScenario.multiple} return</span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="mt-6 p-4 bg-yellow-50 rounded-lg">
+                                    <p className="text-gray-700 font-medium">Why Invest Now:</p>
+                                    <ul className="mt-2 space-y-1">
+                                        <li className="flex items-center text-sm text-gray-700">
+                                            <span className="text-green-500 mr-2">✅</span>
+                                            Category Creator: First mobile-native DAP for Indian enterprises
+                                        </li>
+                                        <li className="flex items-center text-sm text-gray-700">
+                                            <span className="text-green-500 mr-2">✅</span>
+                                            Proven Traction: 25 customers, ₹30L MRR, 40% MoM growth
+                                        </li>
+                                        <li className="flex items-center text-sm text-gray-700">
+                                            <span className="text-green-500 mr-2">✅</span>
+                                            Exceptional Unit Economics: 40:1 LTV:CAC, 2.5 month payback
+                                        </li>
+                                        <li className="flex items-center text-sm text-gray-700">
+                                            <span className="text-green-500 mr-2">✅</span>
+                                            Massive Market: ₹37,500 Cr addressable market
+                                        </li>
+                                        <li className="flex items-center text-sm text-gray-700">
+                                            <span className="text-green-500 mr-2">✅</span>
+                                            Experienced Founder: 17+ years product leadership at Fiserv, Sigma Computing
+                                        </li>
+                                    </ul>
+                                </div>
+                            </section>
+                        )}
+                    </>
+                )}
+
+
+
+
             </div>
         </div>
     )
